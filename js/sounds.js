@@ -6,10 +6,10 @@ export default function () {
     'https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true'
   )
 
-  const rain = new Audio('/assets/Chuva.wav')
-  const coffeeShop = new Audio('/assets/Cafeteria.wav')
-  const forest = new Audio('/assets/floresta.wav')
-  const fireplace = new Audio('/assets/lareira.wav')
+  const rain = new Audio('./assets/Chuva.wav')
+  const coffeeShop = new Audio('./assets/Cafeteria.wav')
+  const forest = new Audio('./assets/Floresta.wav')
+  const fireplace = new Audio('./assets/Lareira.wav')
 
   rain.loop = true
   coffeeShop.loop = true
