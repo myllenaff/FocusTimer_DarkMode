@@ -6,10 +6,10 @@ export default function () {
     'https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true'
   )
 
-  const rain = new Audio('https://github.com/myllenaff/FocusTimer_desafio01/blob/master/assets/Chuva.wav?raw=true')
-  const coffeeShop = new Audio('https://github.com/myllenaff/FocusTimer_desafio01/blob/master/assets/Cafeteria.wav?raw=true')
-  const forest = new Audio('https://github.com/myllenaff/FocusTimer_desafio01/blob/master/assets/Floresta.wav?raw=true')
-  const fireplace = new Audio('https://github.com/myllenaff/FocusTimer_desafio01/blob/master/assets/Lareira.wav?raw=true')
+  const rain = new Audio('/assets/Chuva.wav')
+  const coffeeShop = new Audio('/assets/Cafeteria.wav')
+  const forest = new Audio('/assets/floresta.wav')
+  const fireplace = new Audio('/assets/lareira.wav')
 
   rain.loop = true
   coffeeShop.loop = true
