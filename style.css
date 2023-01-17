@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color:rgb(255, 255, 255);
+  --bg-primary-light: rgb(255, 255, 255);
+
+  --text-color: #323238;
+  --bt-light-color: #E1E1E6;
+  --bt-hover-color: #d3d3d4;
+  --bt-disabled-color: #9b9ba0;
+  --bt-color:#02799D;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.hide {
+  display: none;
+}
+
+button svg {
+   width: clamp(3.2rem, 2rem + 14vw, 6.4rem); 
+} 
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19rem;
+}
+
+#timerWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#timer {
+  display: flex;
+  font-size: 15rem;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 4rem;
+  transition: all .2s;
+}
+
+#controls button:not(.disabled):hover {
+  transform: scale(1.1);
+}
+
+#controls button.disabled {
+  cursor: not-allowed;
+  color: var(--bt-disabled-color);
+}
+
+#music {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+  width: 31.2rem;
+}
+
+#music button {
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2.4rem;
+  background-color: var(--bt-light-color);
+  transition: all 0.2s;
+} 
+
+#music button:hover {
+  background-color: var(--bt-hover-color);
+  transform: scale(1.1);
+}
+
+#music button.active{
+  background-color: var(--bt-color);
+  color: var(--bg-primary-light);
+}
+
+@media only screen and (max-width:900px) {
+  main {
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+}
