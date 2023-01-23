@@ -11,10 +11,11 @@ export default function () {
   const forest = new Audio('./assets/Floresta.wav')
   const fireplace = new Audio('./assets/Lareira.wav')
 
-  rain.loop = true
-  coffeeShop.loop = true
-  forest.loop = true
-  fireplace.loop = true
+  rain.volume = 0.5
+  coffeeShop.volume = 0.5
+  forest.volume = 0.5
+  fireplace.volume = 0.5
+
 
   function pressButton() {
     buttonPressAudio.play()
@@ -36,6 +37,7 @@ export default function () {
     fireplace.pause()
   }
 
+
   return {
     pressButton,
     stopMusic,
@@ -43,6 +45,7 @@ export default function () {
     forest,
     fireplace,
     coffeeShop,
-    timeEnd
+    timeEnd,
+   
   }
 }

@@ -7,14 +7,22 @@
 :root {
   font-size: 62.5%;
 
-  --bg-color:rgb(255, 255, 255);
-  --bg-primary-light: rgb(255, 255, 255);
+ /*Color Dark theme*/
+  --bg-color-dark:#121214;
+  --text-color-dark: #C4C4CC;
+  --bt-color-dark:#29292E;
+  --bt-active-color-dark: #0A3442;
 
-  --text-color: #323238;
-  --bt-light-color: #E1E1E6;
+   /*Color Light Theme*/
+  --bg-color-light:#fff;
+  --bg-primary-light:#fff;
+  --text-color-light: #323238;
+  --bt-color-light: #E1E1E6;
+  --bt-active-color-light:#02799D;
+  
+   /*General Colors*/
   --bt-hover-color: #d3d3d4;
   --bt-disabled-color: #9b9ba0;
-  --bt-color:#02799D;
 }
 
 body {
@@ -22,24 +30,9 @@ body {
   place-items: center;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
 }
-
-button {
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  color: var(--text-color);
-}
-
-.hide {
-  display: none;
-}
-
-button svg {
-   width: clamp(3.2rem, 2rem + 14vw, 6.4rem); 
-} 
 
 main {
   display: flex;
@@ -48,15 +41,84 @@ main {
   gap: 19rem;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color-light);
+}
+
+button svg {
+   width: clamp(3.2rem, 2rem + 14vw, 6.4rem); 
+} 
+
+.hide {
+  display: none;
+}
+
+.darkMode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+input[type=range],
+input[type=range].darkMode {
+  appearance: none;
+  width: 100%;
+  margin-top: 3.8rem;
+  border-radius: 12px;
+
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--text-color-light);
+  width: 10rem;
+  height: 0.4rem;
+  border-radius: 12px;
+
+  outline: none;
+  border: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--text-color-light);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+input[type='range'].darkMode::-webkit-slider-runnable-track {
+  background-color: var(--text-color-dark);
+}
+
+input[type='range'].darkMode::-webkit-slider-thumb {
+  background-color: var(--text-color-dark);
+}
+
+
+#theme {
+  position: absolute;
+  top: 6rem;
+  right: 6rem; 
+}
+
 #timerWrapper {
   display: flex;
   flex-direction: column;
 }
 
-
 #timer {
   display: flex;
   font-size: 15rem;
+}
+
+#timer.darkMode {
+  color: var(--bg-primary-light)
 }
 
 #controls {
@@ -65,16 +127,22 @@ main {
   justify-content: center;
   margin-top: 1.5rem;
   gap: 4rem;
-  transition: all .2s;
+  transition: transform .2s;
+}
+
+
+#controls button.disabled {
+  cursor: not-allowed;
+  color: var(--bt-disabled-color);
 }
 
 #controls button:not(.disabled):hover {
   transform: scale(1.1);
 }
 
-#controls button.disabled {
-  cursor: not-allowed;
-  color: var(--bt-disabled-color);
+#controls.darkMode button {
+  color: var(--text-color-dark);
+
 }
 
 #music {
@@ -88,23 +156,56 @@ main {
   width: 13.8rem;
   height: 15.2rem;
   border-radius: 2.4rem;
-  background-color: var(--bt-light-color);
+  background-color: var(--bt-color-light);
   transition: all 0.2s;
+  padding: 2.4rem;
 } 
 
-#music button:hover {
+
+#music button:hover{
   background-color: var(--bt-hover-color);
   transform: scale(1.1);
 }
 
 #music button.active{
-  background-color: var(--bt-color);
+  background-color: var(--bt-active-color-light);
   color: var(--bg-primary-light);
 }
 
+#music button.active input[type=range]::-webkit-slider-runnable-track,
+#music button.active input[type=range]::-webkit-slider-thumb {
+  background-color: var(--bg-color-light);
+}
+
+#music button.darkMode {
+  background-color: var(--bt-color-dark);
+
+}
+
+#music button.darkMode.active {
+  background-color: var(--bt-active-color-dark);
+}
+
+
 @media only screen and (max-width:900px) {
   main {
-    flex-direction: column-reverse;
-    gap: 4rem;
+    flex-direction: column;
+    gap: 2.4rem;
   }
+
+
+
+  #theme {
+    position: relative;
+    display: flex;
+
+    height: 6.4rem;
+    width: 6.4rem;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    border-radius: 50% ;
+  }
+
 }

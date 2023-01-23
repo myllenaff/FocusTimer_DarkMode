@@ -1,11 +1,11 @@
-# Explorer RocketSeat - Focus Timer 
+# Explorer RocketSeat - Focus Timer Dark Mode
 
 ![preview](.github/preview.gif)
 
 
-Controlador de tempo com sons
+Controlador de tempo com sons, volume e modo noturno
 
-[👉Clique aqui para acessar](https://myllenaff.github.io/FocusTimer_desafio01/)
+[👉Clique aqui para acessar](https://myllenaff.github.io/FocusTimer_DarkMode/)
 
 ## 💻 Tecnologias:
 
@@ -13,8 +13,9 @@ Controlador de tempo com sons
 - CSS
 - JavaScript
 - Git e Github
+- Figma
 
 ## ❤ Contato:
 
 myllenaff@gmail.com
-# Projeto Focus Timer
+# Projeto Focus Timer - Dark Mode

@@ -1,10 +1,10 @@
-import Controls from "./controls.js"
-import Timer from "./timer.js"
-import Sound from "./sounds.js"
-import Events from "./events.js"
+import Controls from './controls.js'
+import Timer from './timer.js'
+import Cafe from './sounds.js'
+import Events from './events.js'
 import {
   buttonPlay,
-  buttonPause, 
+  buttonPause,
   buttonSet,
   buttonStop,
   buttonAddTime,
@@ -14,9 +14,16 @@ import {
   buttonCoffeeShop,
   buttonFire,
   minutesDisplay,
-  secondsDisplay
-} from "./elements.js"
-
+  secondsDisplay,
+  buttonLight,
+  buttonDark,
+  forestRange,
+  rainRange,
+  coffeeRange,
+  fireRange,
+  controlsDiv,
+  timerText
+} from './elements.js'
 
 const controls = Controls({
   buttonPause,
@@ -28,15 +35,23 @@ const controls = Controls({
   buttonForest,
   buttonRain,
   buttonCoffeeShop,
-  buttonFire
+  buttonFire,
+  buttonLight,
+  buttonDark,
+  forestRange,
+  rainRange,
+  coffeeRange,
+  fireRange,
+  controlsDiv,
+  timerText
 })
 
 const timer = Timer({
-  minutesDisplay, 
-  secondsDisplay, 
+  minutesDisplay,
+  secondsDisplay,
   resetControls: controls.reset
 })
 
-const sound = Sound()
+const sound = Cafe()
 
-Events({controls, timer, sound})
+Events({ controls, timer, sound, theme })
