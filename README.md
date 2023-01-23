@@ -18,4 +18,4 @@ Controlador de tempo com sons, volume e modo noturno
 ## ❤ Contato:
 
 myllenaff@gmail.com
-# Projeto Focus Timer - Dark Mode
+# Projeto Focus Timer - Dark Mode!
